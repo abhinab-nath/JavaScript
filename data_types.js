@@ -45,3 +45,29 @@ typeof []          // "object"
 typeof function(){}// "function"
 
 console.log(typeof age);
+
+
+// ********* Memory ************ //
+
+// Stack (primitive) => copy of the data, doesn't change original value
+// Heap (non-primitive) => reference, updates or changes original value
+
+let myName = "candy"
+let anotherName = myName
+anotherName = "samurai"
+
+console.log(myName);
+console.log(anotherName);
+
+//heap
+
+let userOne = {
+  email: "abhi@gmail.com",
+  upi: "user@ybl"
+}
+
+let userTwo = userOne
+userTwo.email = "candidsamurai@gmail.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
