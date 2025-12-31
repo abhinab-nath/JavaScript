@@ -6,24 +6,42 @@ let name = "candy"
 let age = 18
 let isLoggedIn = true
 
-// PRIMITIVE DATA TYPES (immutable):-
+// ---------- PRIMITIVE DATA TYPES (immutable) ---------- //
+/* 7 types: string, number, boolean, null, undefined, symbol, BigInt
 
-// Max exact integer => −(2^53 − 1) to (2^53 − 1) (range)
-// Number.MAX_SAFE_INTEGER  // 9007199254740991
-// Number.MIN_SAFE_INTEGER  // -9007199254740991
-// when numbers are bigger than this we use BigInt
+1. Max exact integer => −(2^53 − 1) to (2^53 − 1) (range)
+Number.MAX_SAFE_INTEGER  // 9007199254740991
+Number.MIN_SAFE_INTEGER  // -9007199254740991
+2. when numbers are bigger than this we use BigInt
+const score = 100
 
-// string => " "
-// boolean => true / false
-// null => standalone value [type = object]
-// undefined => value not assigned yet [type = undefined]
-// symbol => unique
+3. string => " "
+
+4. boolean => true / false
+const userLoggedIn = false
+
+5. null => standalone value [type = object]
+const outsideTemp = null
+
+6. undefined => value not assigned yet [type = undefined]
+let userEmail;
+
+7. symbol => unique
+const id = Symbol('1234')
+const anotherId = Symbol('1234')
+console.log(id === anotherId);   //false, they look same but different
+
+*/
 
 
-// NON-PRIMITIVE DATA TYPES (mutable):-
+// --------- NON-PRIMITIVE DATA TYPES (mutable) / Reference --------- //
+// array, objects, functions
 
 // object => key-value pairs
-let user = { name: "Candy", age: 20};
+let user = {
+  name: "Candy", 
+  age: 20
+};
 
 // array => stores ordered collection of values
 let numbers = [1,2,3,4];
@@ -34,7 +52,9 @@ function greet() {
 }
 
 
-// typeof Operator
+
+// ************* typeof Operator *************** //
+
 typeof 10          // "number"
 typeof "hi"        // "string"
 typeof true        // "boolean"
@@ -45,6 +65,7 @@ typeof []          // "object"
 typeof function(){}// "function"
 
 console.log(typeof age);
+
 
 
 // ********* Memory ************ //
