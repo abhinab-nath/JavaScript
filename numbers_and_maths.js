@@ -31,3 +31,32 @@ let min_safe = Number.MIN_SAFE_INTEGER; // -9007199254740991
 
 console.table(['max/min value:',max_num, min_num ,'safe int:', max_safe, min_safe]);
 
+
+
+// ***************** MATHS ******************* //
+
+console.log(Math);  // Object [Math] {}
+
+//absoulute value
+console.log(Math.abs(-4)); // 4, negative -> positive
+
+//round
+console.log(Math.round(4.6)); // 5
+
+// ceil, floor
+console.log(Math.ceil(4.2)); // 5, top value
+console.log(Math.floor(4.9)); // 4, lowest value
+
+// max, min
+console.log(Math.min(3,5,6,7,-8,0)); // -8
+console.log(Math.max(3,5,6,7,-8,0)); // 7
+
+// random
+console.log(Math.random()); // gives values btw 0 and 1
+
+console.log((Math.random() * 10) + 1); // +1 ensures 0 doesn't occur
+
+// generating a random no. btw two no.s
+const min = 10
+const max = 20 
+console.log(Math.floor(Math.random() * (max - min + 1 )) + min); 
