@@ -73,3 +73,16 @@ const user = [
 
 console.log(user[1].email);
 //
+
+
+// de-structure
+
+const course = {
+    coursename: "java script",
+    price: "9999",
+    conurseInstructor: "gpt"
+}
+ 
+const {conurseInstructor: instructor} = course
+
+console.log(instructor);
