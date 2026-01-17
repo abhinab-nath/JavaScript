@@ -106,9 +106,9 @@ if (Object.keys(emptyObj).length === 0) {
 
 let val1;
 // val1 = 5 ?? 10
-// val1 = null ?? 10
-// val1 = undefined ?? 15
-val1 = null ?? 10 ?? 20
+// val1 = null ?? 10  // 10
+// val1 = undefined ?? 15  // 15
+val1 = null ?? 10 ?? 20  // first value
 
 console.log(val1);
 
