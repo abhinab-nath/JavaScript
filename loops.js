@@ -106,6 +106,7 @@ for (const key in myObj){
 }
 
 
+
 // for-each 
 
 const coding = ["js","ruby","java","python","cpp"]
@@ -124,6 +125,13 @@ function printMe(item){
     console.log(item);
 }
 coding.forEach(printMe)
+
+
+// for-each doesn't return anything
+const values = coding.forEach( (item) => {
+    console.log(item); // undefined
+    return item       // undefined
+})
 
 
 
@@ -155,3 +163,6 @@ const myCoding = [
 myCoding.forEach( (item) => {
     console.log(item.languageName);
 } )
+
+
+
