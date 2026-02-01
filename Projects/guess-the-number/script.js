@@ -76,5 +76,15 @@ function endGame(){
 }
 
 function newGame(){
-
+    const newGameButton = document.querySelector("#newGame")
+    newGameButton.addEventListener('click',function(e){
+        randomNumber = parseInt(Math.random() * 100 + 1);
+        prevGuess = []
+        numGuess = 1
+        guestSlot.innerHTML = ''
+        remaining.innerHTML = `${12-numGuess}`;
+        userInput.removeAttribute('disabled');
+        startOver.removeChild(p)
+        playGame = true;
+    })
 }
