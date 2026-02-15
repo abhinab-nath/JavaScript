@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>coding with candy</h1>
+    <button id="stop">STOP</button>
+</body>
+
+<script>
+    const sayHello = function(){
+        console.log("hellowww");
+    }
+    const changeText = function(){
+        document.querySelector('h1').
+        innerHTML = "hahahahahahah"
+    }
+
+    const changeMe = setTimeout(changeText, 2000);
+    setTimeout(sayHello, 2000);
+
+    // using clear timeout to stop the change in h1
+    document.querySelector('#stop').
+    addEventListener('click',function(){
+        clearTimeout(changeMe)
+        console.log("stopped");
+    })
+</script>
+</html>
