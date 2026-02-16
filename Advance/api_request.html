@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 250px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow:  0 0 10px rgba(238, 68, 30, 0.859);
+            text-align: center;
+            font-family: Arial;
+            border: solid 2px black;
+        }
+
+        .card img {
+            border: solid 5px rgb(230, 127, 230);
+            width: 120px;
+            border-radius: 50%;
+        }
+        button{
+            border: solid 3px #34e5f2;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: rgb(77, 0, 128);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="card"> </div>
+
+    <script>
+        const requestUrl = 'https://api.github.com/users/abhinab-nath'
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl)
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if(xhr.readyState === 4){
+                const data = JSON.parse(this.responseText)
+                // console.log(typeof data);
+                // console.log(data.followers);
+
+                const card = `
+                    <div class="cardInfo">
+                        <img src="${data.avatar_url}" alt="avatar">
+                        <h3>${data.name}</h3>
+                        <p>Followers: ${data.followers}</p>
+                        <a href="${data.html_url}" target="_blank">
+                            <button>Visit GitHub</button>
+                        </a>
+                    </div>
+                `;
+
+                document.querySelector('.card').innerHTML = card;
+
+            }
+        }
+        xhr.send();
+    </script>
+</body>
+</html>

@@ -50,6 +50,8 @@
         return color;
       };
 
+      // let intervalID; // now it global
+
       const startChangingColor = function(){
         intervalID = setInterval(changebg, 1000);
         function changebg(){
@@ -58,6 +60,7 @@
       }
       const stopChangingColor = function(){
         clearInterval(intervalID)
+        // intervalID = null;
       }
 
       document.querySelector("#start").addEventListener
